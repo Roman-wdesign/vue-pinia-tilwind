@@ -13,7 +13,7 @@ const storeCounter = useCounterStore();
     <mcv-counter />
     <div class="buttons flex flex-row justify-center">
       <mcv-button-minus />
-      <mcv-button-plus />
+      <mcv-button-plus>+</mcv-button-plus>
     </div>
     <hr class="mt-5 mb-5" />
     <div>This counter is: {{ storeCounter.oddOrEven }}</div>

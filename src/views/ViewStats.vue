@@ -1,13 +1,11 @@
 <template>
-$END$
+  <div class="notes"><h1>Stats</h1></div>
 </template>
 
 <script>
 export default {
-name: "ViewSats"
-}
+  name: "McvViewStats",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -12,7 +12,7 @@ const storeCounter = useCounterStore();
         'bg-blue-700': storeCounter.oddOrEven === 'even',
       }"
       @click="storeCounter.increaseCount(1)"
-      class="counter-button text-5xl"
+      class="counter-button text-5xl text-white"
     >
       {{ storeCounter.count }}
     </button>

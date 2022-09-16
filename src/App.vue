@@ -1,16 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import McvNavBar from "@/components/layout/NavBar.vue";
+</script>
 
 <template>
   <div class="container mx-auto text-center">
-    <nav>
-      <RouterLink class="text-blue-600 visited:text-purple-600" to="/"
-        >Home</RouterLink
-      >
-      |
-      <RouterLink class="text-blue-600 visited:text-purple-600" to="/about">
-        About</RouterLink
-      >
-    </nav>
+    <mcv-nav-bar />
     <RouterView />
   </div>
 </template>
