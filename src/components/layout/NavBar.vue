@@ -1,3 +1,4 @@
+
 <template>
   <div class="bg-indigo-600">
     <nav
@@ -84,7 +85,7 @@
     </nav>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { ref } from "vue";
 import { XMarkIcon, Bars3Icon } from "@heroicons/vue/20/solid";
 export default {
