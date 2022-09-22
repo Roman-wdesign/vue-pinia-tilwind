@@ -1,34 +1,19 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useStoreNotes } from "@/stores/storeNotes";
 import McvNote from "@/components/Notes/Note.vue";
+
+const storeNotes = useStoreNotes();
 
 const newNote = ref("");
 const newNoteRef = ref(null);
-const notes = ref([
-  {
-    id: "1",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-  {
-    id: "2",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  },
-]);
 
 const addNote = () => {
-  let currentDate = new Date().getTime(),
-    id = currentDate.toString();
-  let note = {
-    id,
-    content: newNote.value,
-  };
-  notes.value.unshift(note);
-  newNote.value = "";
-  newNoteRef.value.focus();
+  storeNotes.addNote(newNote.value);
+   newNote.value = "";
+   newNoteRef.value.focus();
 };
-const deleteNote = idToDelete => {
+const deleteNote = (idToDelete) => {
   notes.value = notes.value.filter((note) => {
     return note.id !== idToDelete;
   });
@@ -78,7 +63,7 @@ const deleteNote = idToDelete => {
     <div class="w-full flex flex-wrap flex-row justify-center">
       <mcv-note
         @deleteClicked="deleteNote"
-        v-for="note in notes"
+        v-for="note in storeNotes.notes"
         :key="note.id"
         :note="note"
       />
