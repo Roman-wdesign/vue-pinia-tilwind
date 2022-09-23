@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { useStoreNotes } from "@/stores/storeNotes";
+const storeNotes = useStoreNotes();
 
 const props = defineProps({
   note: {
@@ -14,10 +16,7 @@ const characterLength = computed(() => {
 
   return `${length} ${description}`;
 });
-const emit = defineEmits(["deleteClicked"]);
-const handleDeleteClicked = () => {
-  emit("deleteClicked", props.note.id);
-};
+
 </script>
 <template>
   <div class="block p-6 m-2 rounded-lg shadow-lg bg-white max-w-sm">
@@ -39,7 +38,7 @@ const handleDeleteClicked = () => {
         Edit
       </button>
       <button
-        @click.prevent="handleDeleteClicked"
+        @click.prevent="storeNotes.deleteNote(note.id)"
         type="button"
         class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
       >

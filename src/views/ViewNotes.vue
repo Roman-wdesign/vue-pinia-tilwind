@@ -10,13 +10,8 @@ const newNoteRef = ref(null);
 
 const addNote = () => {
   storeNotes.addNote(newNote.value);
-   newNote.value = "";
-   newNoteRef.value.focus();
-};
-const deleteNote = (idToDelete) => {
-  notes.value = notes.value.filter((note) => {
-    return note.id !== idToDelete;
-  });
+  newNote.value = "";
+  newNoteRef.value.focus();
 };
 </script>
 
@@ -61,12 +56,7 @@ const deleteNote = (idToDelete) => {
       </form>
     </div>
     <div class="w-full flex flex-wrap flex-row justify-center">
-      <mcv-note
-        @deleteClicked="deleteNote"
-        v-for="note in storeNotes.notes"
-        :key="note.id"
-        :note="note"
-      />
+      <mcv-note v-for="note in storeNotes.notes" :key="note.id" :note="note" />
     </div>
   </div>
 </template>
