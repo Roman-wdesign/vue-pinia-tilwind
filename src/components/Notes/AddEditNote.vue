@@ -11,6 +11,8 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  placeholder: { type: String, default: "Your message..." },
+  label: { type: String },
 });
 /*
 emits
@@ -37,10 +39,12 @@ defineExpose({ focusTextarea });
           >
             Message
           </label>
+          <label v-if="label" class="label"> {{ label }}</label>
           <textarea
             v-model="modelValue"
             @input="$emit('update:modelValue', modelValue)"
             ref="textareaRef"
+            :placeholder="placeholder"
             class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
             id="message"
           ></textarea>

@@ -19,7 +19,11 @@ const addNote = () => {
 
 <template>
   <div class="flex flex-col justify-center">
-    <add-edit-note ref="addEditNoteRef" v-model="newNote">
+    <add-edit-note
+      placeholder="Add a new note"
+      ref="addEditNoteRef"
+      v-model="newNote"
+    >
       <template #buttons>
         <button
           :class="!newNote ? 'bg-gray-400' : 'bg-teal-400'"
