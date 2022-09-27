@@ -4,11 +4,16 @@
  */
 import AddEditNote from "@/components/Notes/AddEditNote.vue";
 import { ref } from "vue";
-const newNote = ref("");
-/*note
+import { useStoreNotes } from "@/stores/storeNotes";
+import { useRoute } from "vue-router";
 
- */
-const noteContent = ref("gfgdfgdfgdfgdfg");
+const noteContent = ref("");
+const route = useRoute();
+const storeNotes = useStoreNotes();
+
+noteContent.value = storeNotes.getNoteContent(route.params.id);
+
+console.log(route.params.id);
 </script>
 
 <template>
@@ -37,6 +42,7 @@ const noteContent = ref("gfgdfgdfgdfgdfg");
         </button>
       </template>
     </add-edit-note>
+    <pre>{{ $route.params.id }}</pre>
   </div>
 </template>
 
