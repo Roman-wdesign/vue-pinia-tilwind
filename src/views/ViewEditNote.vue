@@ -12,8 +12,12 @@ const route = useRoute();
 const storeNotes = useStoreNotes();
 
 noteContent.value = storeNotes.getNoteContent(route.params.id);
-
-console.log(route.params.id);
+/*
+saved clicked
+*/
+const handleSaveClick = () => {
+  storeNotes.updateNote(route.params.id, noteContent.value);
+};
 </script>
 
 <template>
@@ -26,9 +30,8 @@ console.log(route.params.id);
     >
       <template #buttons>
         <button
-          :disabled="!newNote"
-          :class="!newNote ? 'bg-gray-400' : 'bg-teal-400'"
-          class="shadow hover:opacity-50 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          @click="handleSaveClick"
+          class="bg-green-600 shadow hover:opacity-50 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 mr-5 rounded"
           type="button"
         >
           Save note

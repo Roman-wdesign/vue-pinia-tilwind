@@ -54,11 +54,10 @@ defineExpose({ focusTextarea });
           </p>
         </div>
       </div>
-      <div class="md:flex md:items-center">
-        <div class="md:w-1/3">
+      <div class="flex flex-row justify-center items-center">
+        <div class="w-full">
           <slot name="buttons" />
         </div>
-        <div class="md:w-2/3"></div>
       </div>
     </form>
   </div>
