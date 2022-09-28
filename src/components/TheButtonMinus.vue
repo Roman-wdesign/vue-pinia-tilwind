@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useCounterStore } from "@/stores/counter";
 
 const storeCounter = useCounterStore();
@@ -21,7 +21,7 @@ const storeCounter = useCounterStore();
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "McvButtonMinus",
 };

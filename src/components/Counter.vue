@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useCounterStore } from "@/stores/counter";
 const storeCounter = useCounterStore();
 </script>
@@ -7,7 +7,7 @@ const storeCounter = useCounterStore();
   <div class="count text-6xl m-5">{{ storeCounter.count }}</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "McvCounter",
 };

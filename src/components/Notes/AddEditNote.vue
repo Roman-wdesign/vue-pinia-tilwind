@@ -18,6 +18,7 @@ const props = defineProps({
 emits
  */
 const emit = defineEmits(["update:modelValue"]);
+
 /*
 focus textarea
  */
@@ -26,6 +27,15 @@ const focusTextarea = () => {
   textareaRef.value.focus();
 };
 defineExpose({ focusTextarea });
+
+console.log(emit);
+console.log(props);
+
+const vAutofocus = {
+  mounted: (el: any) => {
+    el.focus();
+  },
+};
 </script>
 
 <template>
@@ -41,6 +51,7 @@ defineExpose({ focusTextarea });
           </label>
           <label v-if="label" class="label"> {{ label }}</label>
           <textarea
+            v-autofocus
             v-model="modelValue"
             @input="$emit('update:modelValue', modelValue)"
             ref="textareaRef"
