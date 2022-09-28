@@ -1,8 +1,31 @@
+<script setup lang="ts">
+import { useStoreNotes } from "@/stores/storeNotes";
+const storeNotes = useStoreNotes();
+</script>
 <template>
-  <div class="notes"><h1>Stats</h1></div>
+  <div class="stats">
+    <table class="table-auto w-full">
+      <thead>
+        <tr>
+          <th class="border-b-2 font-bold">Stat</th>
+          <th class="border-b-2 font-bold">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Number of Notes</td>
+          <td>{{ storeNotes.totalNotesCount }}</td>
+        </tr>
+        <tr>
+          <td>Number of Characters (of all notes)</td>
+          <td>XXX</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "McvViewStats",
 };
