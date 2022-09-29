@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useStoreNotes } from "@/stores/storeNotes";
+import { useWatchCharacters } from "@/use/useWatchCharacters";
 import McvNote from "@/components/Notes/Note.vue";
 import AddEditNote from "@/components/Notes/AddEditNote.vue";
 
@@ -15,6 +16,10 @@ const addNote = () => {
   newNote.value = "";
   addEditNoteRef.value.focusTextarea();
 };
+/**
+ watch
+ */
+useWatchCharacters(newNote);
 </script>
 
 <template>
@@ -45,7 +50,7 @@ const addNote = () => {
 
 <script lang="ts">
 export default {
-  name: "McvViewNotes",
+  name: "McvViewNotes"
 };
 </script>
 
