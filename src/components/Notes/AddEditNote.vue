@@ -54,7 +54,6 @@ console.log(props);
             :placeholder="placeholder"
             class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
             id="message"
-            maxlength="20"
           ></textarea>
           <p class="text-gray-600 text-xs italic">
             Re-size can be disabled by set by resize-none / resize-y / resize-x

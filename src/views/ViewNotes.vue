@@ -19,7 +19,7 @@ const addNote = () => {
 /**
  watch
  */
-useWatchCharacters(newNote);
+useWatchCharacters(newNote, 50);
 </script>
 
 <template>
@@ -43,7 +43,10 @@ useWatchCharacters(newNote);
     </add-edit-note>
 
     <div class="w-full flex flex-wrap flex-row justify-center">
-      <mcv-note v-for="note in storeNotes.notes" :key="note.id" :note="note" />
+      <mcv-note
+        v-for="note in storeNotes.notes"
+        :key="note.id"
+        :note="note" />
     </div>
   </div>
 </template>
