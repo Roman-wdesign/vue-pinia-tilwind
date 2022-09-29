@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useStoreNotes } from "@/stores/storeNotes";
+import { vAutofocus } from "@/directives/vAutofocus";
 const storeNotes = useStoreNotes();
 </script>
 <template>
@@ -22,6 +23,14 @@ const storeNotes = useStoreNotes();
         </tr>
       </tbody>
     </table>
+    <div class="mt-5">
+      <input
+        v-autofocus
+        class="border-2 border-amber-300"
+        type="text"
+        placeholder="Did you see that?"
+      />
+    </div>
   </div>
 </template>
 
