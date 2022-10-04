@@ -8,7 +8,7 @@ import AddEditNote from "@/components/Notes/AddEditNote.vue";
 const storeNotes = useStoreNotes();
 
 const newNote = ref("");
-const addEditNoteRef = ref(null);
+const addEditNoteRef  = ref(null);
 
 const addNote = () => {
   storeNotes.addNote(newNote.value);

@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import { onClickOutside } from "@vueuse/core";
+let showMenu = ref(false);
+const toggleNav = () => (showMenu.value = !showMenu.value)
+/*
+clock outside to close
+ */
+const navbarMenuRef = ref(null);
+onClickOutside(navbarMenuRef, (event) => console.log(event))
+
+
+
+
+</script>
 <template>
   <div class="bg-indigo-600">
     <nav
@@ -5,7 +20,7 @@
     >
       <div class="flex items-center justify-end">
         <!-- Mobile menu button -->
-        <div @click="toggleNav" class="flex md:hidden">
+        <div @click="toggleNav" class="flex md:hidden" ref="navbarMenuRef">
           <button
             type="button"
             class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400"
@@ -38,9 +53,9 @@
               class="text-blue-600 visited:text-slate-100"
               to="/"
               active-class="bg-sky-600"
-              >Home</RouterLink
-            ></a
-          >
+              >Home
+            </RouterLink>
+          </a>
         </li>
         <li>
           <a
@@ -53,9 +68,9 @@
               class="text-blue-600 visited:text-slate-100"
               active-class="bg-sky-600"
               to="/about"
-              >About</RouterLink
-            ></a
-          >
+              >About
+            </RouterLink>
+          </a>
         </li>
         <li>
           <a
@@ -67,37 +82,36 @@
               class="text-blue-600 visited:text-slate-100"
               active-class="bg-sky-600"
               to="/notes"
-              >Notes</RouterLink
-            ></a
-          >
+              >Notes
+            </RouterLink>
+          </a>
         </li>
         <li>
           <a
             href="#"
             class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent hover:opacity-50 md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-            ><RouterLink
+          >
+            <RouterLink
               @click="showMenu = false"
               class="text-blue-600 visited:text-slate-100"
               active-class="bg-sky-600"
               to="/stats"
-              >Stats</RouterLink
-            ></a
-          >
+              >Stats
+            </RouterLink>
+          </a>
         </li>
       </ul>
     </nav>
   </div>
 </template>
 <script lang="ts">
-import { ref } from "vue";
+
 import { XMarkIcon, Bars3Icon } from "@heroicons/vue/20/solid";
+
+
 export default {
   name: "McvNavBar",
-  setup() {
-    let showMenu = ref(false);
-    const toggleNav = () => (showMenu.value = !showMenu.value);
-    return { showMenu, toggleNav };
-  },
+
   components: { XMarkIcon, Bars3Icon },
 };
 </script>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useStoreNotes } from "@/stores/storeNotes";
-import { useWatchCharacters } from "@/use/useWatchCharacters";
+import  { useWatchCharacters } from "@/use/useWatchCharacters";
 import { vAutofocus } from "@/directives/vAutofocus";
 
 const storeNotes = useStoreNotes();
 const loveNoteballs = ref("");
-useWatchCharacters(loveNoteballs, 10)
+useWatchCharacters(loveNoteballs, 10);
 </script>
 <template>
   <div class="stats">
@@ -30,8 +30,8 @@ useWatchCharacters(loveNoteballs, 10)
     </table>
     <div class="mt-5">
       <input
-        v-model="loveNoteballs"
         v-autofocus
+        v-model="loveNoteballs"
         class="border-2 border-amber-300"
         type="text"
         placeholder="Did you see that?"
