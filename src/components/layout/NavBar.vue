@@ -1,15 +1,19 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { onClickOutside } from "@vueuse/core";
+
 let showMenu = ref(false);
-const toggleNav = () => (showMenu.value = !showMenu.value)
+const toggleNav = () => (showMenu.value = !showMenu.value);
 /*
 clock outside to close
  */
 const navbarMenuRef = ref(null);
-onClickOutside(navbarMenuRef, (event) => console.log(event))
-
-
+const navbarBurgerRef = ref(null);
+onClickOutside(navbarMenuRef, () => {
+  showMenu.value = false;
+}, {
+  ignore: [navbarBurgerRef]
+});
 
 
 </script>
@@ -26,6 +30,7 @@ onClickOutside(navbarMenuRef, (event) => console.log(event))
             class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400"
           >
             <Bars3Icon
+              ref="navbarBurgerRef"
               class="h-6 w-6 text-gray-50"
               :class="showMenu ? 'hidden' : 'flex'"
             />
@@ -53,7 +58,7 @@ onClickOutside(navbarMenuRef, (event) => console.log(event))
               class="text-blue-600 visited:text-slate-100"
               to="/"
               active-class="bg-sky-600"
-              >Home
+            >Home
             </RouterLink>
           </a>
         </li>
@@ -68,7 +73,7 @@ onClickOutside(navbarMenuRef, (event) => console.log(event))
               class="text-blue-600 visited:text-slate-100"
               active-class="bg-sky-600"
               to="/about"
-              >About
+            >About
             </RouterLink>
           </a>
         </li>
@@ -82,7 +87,7 @@ onClickOutside(navbarMenuRef, (event) => console.log(event))
               class="text-blue-600 visited:text-slate-100"
               active-class="bg-sky-600"
               to="/notes"
-              >Notes
+            >Notes
             </RouterLink>
           </a>
         </li>
@@ -96,7 +101,7 @@ onClickOutside(navbarMenuRef, (event) => console.log(event))
               class="text-blue-600 visited:text-slate-100"
               active-class="bg-sky-600"
               to="/stats"
-              >Stats
+            >Stats
             </RouterLink>
           </a>
         </li>
@@ -112,6 +117,6 @@ import { XMarkIcon, Bars3Icon } from "@heroicons/vue/20/solid";
 export default {
   name: "McvNavBar",
 
-  components: { XMarkIcon, Bars3Icon },
+  components: { XMarkIcon, Bars3Icon }
 };
 </script>
