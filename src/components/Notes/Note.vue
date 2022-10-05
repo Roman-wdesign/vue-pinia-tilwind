@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, reactive } from "vue";
 import { useStoreNotes } from "@/stores/storeNotes";
+import ModalDeleteNote from "@/components/Notes/ModalDeleteNote.vue";
 const storeNotes = useStoreNotes();
 
 const props = defineProps({
@@ -16,6 +17,13 @@ const characterLength = computed(() => {
 
   return `${length} ${description}`;
 });
+
+/*
+modals
+ */
+const modals= reactive({
+  deleteNote:true
+})
 </script>
 <template>
   <div class="block p-6 m-2 rounded-lg shadow-lg bg-white max-w-sm">
@@ -44,6 +52,9 @@ const characterLength = computed(() => {
         Delete
       </button>
     </div>
+    <ModalDeleteNote
+      v-if="modals.deleteNote"
+    />
   </div>
 </template>
 
