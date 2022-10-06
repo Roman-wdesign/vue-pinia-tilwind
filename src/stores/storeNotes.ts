@@ -39,7 +39,7 @@ export const useStoreNotes = defineStore("storeNotes", {
   },
   getters: {
     getNoteContent: (state) => {
-      return (id: any) => {
+      return (id: string) => {
         return state.notes.filter((note) => note.id === id)[0].content;
       };
     },
