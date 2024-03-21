@@ -1,19 +1,31 @@
-<mxfile host="app.diagrams.net" modified="2024-03-21T05:36:05.015Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="yXe5V4aq6k-FJJX5yzmO" version="24.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2024-03-21T05:39:28.423Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="HKG3YyWlE8YwgLpuOqAD" version="24.0.7" type="github">
   <diagram name="Страница — 1" id="AM5RZhxjCHDNB7uwH8YJ">
     <mxGraphModel dx="2261" dy="782" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <object label="" Fetch.ts="Fetching to mmodule. Without API" id="7pRAGK9oI8k17hdQFVaB-1">
-          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;gradientColor=none;" vertex="1" parent="1">
+        <mxCell id="7pRAGK9oI8k17hdQFVaB-2" value="API_1.ts" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="-560" y="60" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7pRAGK9oI8k17hdQFVaB-3" value="API_2.ts" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="-560" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+        <object label="&lt;div&gt;Fetch.ts&lt;/div&gt;" Fetch.ts="Fetching to mmodule. Without API" id="7pRAGK9oI8k17hdQFVaB-1">
+          <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;" parent="1" vertex="1">
             <mxGeometry x="-740" y="120" width="120" height="120" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="7pRAGK9oI8k17hdQFVaB-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="-560" y="60" width="80" height="80" as="geometry" />
+        <mxCell id="EpmLASaPMZz4TKc6LWcz-1" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;startArrow=ERmany;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="7pRAGK9oI8k17hdQFVaB-1" target="7pRAGK9oI8k17hdQFVaB-2">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="-660" y="410" as="sourcePoint" />
+            <mxPoint x="-560" y="310" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="7pRAGK9oI8k17hdQFVaB-3" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="-560" y="220" width="80" height="80" as="geometry" />
+        <mxCell id="EpmLASaPMZz4TKc6LWcz-2" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmany;startArrow=ERmany;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="7pRAGK9oI8k17hdQFVaB-1" target="7pRAGK9oI8k17hdQFVaB-3">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="-730" y="480" as="sourcePoint" />
+            <mxPoint x="-630" y="380" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
